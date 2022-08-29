@@ -21,6 +21,30 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayBgm()
     {
-        _bgmAudioSource[Random.Range(0, _bgmAudioSource.Count)].Play();
+        int randomAudio = Random.Range(0, _bgmAudioSource.Count);
+        _bgmAudioSource[randomAudio].Play();
+        UnloadBGM(randomAudio);
+    }
+
+    public void UnloadAllBGM()
+    {
+        _bgmAudioSource.Clear();
+    }
+
+    private void UnloadBGM(int index)
+    {
+        int indexRemove = 0;
+        int loopTimes = _bgmAudioSource.Count;
+        for (int i = 0; i < loopTimes; i++)
+        {
+            if (i == index)
+            {
+                indexRemove += 1;
+            }
+            if (i != index)
+            {
+                _bgmAudioSource.RemoveAt(indexRemove);
+            }
+        }
     }
 }

@@ -26,6 +26,7 @@ public class MenuLauncher : MonoBehaviour
         {
             
             AudioManager.Instance.isAudioEnabled = false;
+            AudioManager.Instance.UnloadAllBGM();
             SceneManager.LoadScene("Game");
         }
 }
