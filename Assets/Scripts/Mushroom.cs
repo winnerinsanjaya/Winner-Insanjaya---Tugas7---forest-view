@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Mushroom : MonoBehaviour
 {
-    public System.Action OnUnitDie;
-
     public float upForce = 1f;
     public float sideForce = .1f;
 

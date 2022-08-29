@@ -26,15 +26,12 @@ public class MushroomSpawner : MonoBehaviour
             Mushroom mScript = actMushroom.GetComponent<Mushroom>();
             mScript.SetStart();
         }
-
         if (deactivedPool.Count <= 0)
         {
             GameObject mushroom = Instantiate(objPrefab, transform.position, Quaternion.identity, mushroomPool);
             Mushroom mScript = mushroom.GetComponent<Mushroom>();
             mScript.SetSpawner(gameObject);
         }
-
-        
     }
 
     public void AddDead(GameObject obj)
